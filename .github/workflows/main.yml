@@ -29,5 +29,5 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "FreshPaste"
+          project: "clear-cow-12"
           entrypoint: "./main.ts"
