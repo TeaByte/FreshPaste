@@ -33,7 +33,6 @@ export default function Greet(props: PageProps) {
             <CopyButton content={props.data.paste.content} />
             <a
               href={`/api/raw/${props.data.id}`}
-              target="_blank"
               class="px-2 py-1 border-gray-500 border-2 rounded bg-white hover:bg-gray-200 transition-colors"
             >
               Raw

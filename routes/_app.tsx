@@ -5,7 +5,21 @@ export default function App({ Component }: PageProps) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>FreshPaste</title>
+        <title>Fresh Paste</title>
+        <meta
+          name="description"
+          content="Effortless text sharing for quick collaboration. Share code snippets, notes, and more with simplicity and ease."
+        />
+        <meta
+          name="keywords"
+          content="text sharing, collaboration, code snippets, notes, online platform, Fresh Paste"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="10 days" />
+        <meta name="author" content="TeaBytr" />
+
         <link rel="stylesheet" href="/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -44,8 +58,7 @@ export default function App({ Component }: PageProps) {
               />
             </a>
             <a
-              href="https://github.com/TeaByte"
-              class="animate-pulse"
+              href="https://github.com/TeaByte/FreshPaste"
               target="_blank"
             >
               <svg

@@ -5,12 +5,7 @@ export default function API() {
   return (
     <>
       <Head>
-        <script src={asset("prism.js")}></script>
-        <link
-          href={asset("prism.css")}
-          rel="stylesheet"
-        >
-        </link>
+        <title>Fresh Paste - API</title>
       </Head>
 
       <section class="mt-8">
