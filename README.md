@@ -1,4 +1,4 @@
-# Fresh project
+# FreshPaste
 
 Simple pastebin-like made using deno fresh
 

@@ -34,6 +34,9 @@ export default function Subscribe() {
         method="post"
       >
         <textarea
+          minLength={5}
+          maxlength={5000}
+          required
           class="px-2 w-full py-1 border-gray-500 bg-white border-2 rounded"
           rows={17}
           type="text"

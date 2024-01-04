@@ -1,16 +1,16 @@
-import { FreshContext } from "$fresh/server.ts";
+import { Handlers } from "$fresh/server.ts";
 import { get } from "../../../utils/db.ts";
 
-// @ts-ignore
-export const handler = async (_req: Request, _ctx: FreshContext): Response => {
-  const id = _ctx.params.paste;
-  const paste = await get(id);
-  if (!paste) {
-    return new Response(null, {
-      status: 404,
-    });
-  }
-
-  // @ts-ignore
-  return new Response(paste.content);
+export const handler: Handlers = {
+  async GET(_, ctx) {
+    const id = ctx.params.paste;
+    const paste = await get(id);
+    if (!paste) {
+      return new Response("Paste not found!.", {
+        status: 404,
+      });
+    }
+    // @ts-ignore
+    return new Response(paste.content);
+  },
 };

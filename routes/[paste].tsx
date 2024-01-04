@@ -40,7 +40,7 @@ export default function Greet(props: PageProps) {
             </a>
           </div>
         </div>
-        <pre class="rounded h-96"><code class={`language-${props.data.syntax} match-braces line-numbers`}>{props.data.paste.content}</code></pre>
+        <pre class="rounded h-96"><code class={`language-${props.data.paste.syntax} match-braces line-numbers`}>{props.data.paste.content}</code></pre>
       </section>
     </>
   );

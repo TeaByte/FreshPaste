@@ -1,24 +1,78 @@
+import { asset } from "$fresh/runtime.ts";
 import { Head } from "$fresh/runtime.ts";
 
-export default function Error404() {
+export default function API() {
   return (
     <>
-      <div class="px-4 py-8 mx-auto">
-        <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-          <img
-            class="my-6"
-            src="/logo.svg"
-            width="128"
-            height="128"
-            alt="the Fresh logo: a sliced lemon dripping with juice"
-          />
-          <h1 class="text-4xl font-bold">Not made yet</h1>
-          <p class="my-4">
-            Come back later to see what we have to offer.
+      <Head>
+        <script src={asset("prism.js")}></script>
+        <link
+          href={asset("prism.css")}
+          rel="stylesheet"
+        >
+        </link>
+      </Head>
+
+      <section class="mt-8">
+        <div class="flex flex-col justify-between items-center gap-16">
+          <div class="flex justify-center items-center flex-col gap-2 w-full">
+            <div class="flex gap-1 items-center justify-center w-full">
+              <p class="text-1xl font-bold bg-gray-300 rounded w-fit p-1">
+                POST
+              </p>
+              <input
+                class="bg-white border-gray-500 border-2 rounded text-center p-1 w-96"
+                disabled
+                value="https://clear-cow-12.deno.dev/api/new/"
+              />
+            </div>
+            <p>Allows you to create a new paste.</p>
+            <p>
+              {'{"content":"Hi", "syntax":"plain"}'}
+            </p>
+          </div>
+
+          <div class="flex justify-center items-center flex-col gap-2 w-full">
+            <div class="flex gap-1 items-center justify-center w-full">
+              <p class="text-1xl font-bold bg-gray-300 rounded w-fit p-1">
+                GET
+              </p>
+              <input
+                class="bg-white border-gray-500 border-2 rounded text-center p-1 w-96"
+                disabled
+                value="https://clear-cow-12.deno.dev/api/{id}"
+              />
+            </div>
+            <p>Allows you to view the full data.</p>
+            <p>
+              {"{id} equals id of the paste"}
+            </p>
+          </div>
+
+          <div class="flex justify-center items-center flex-col gap-2 w-full">
+            <div class="flex gap-1 items-center justify-center w-full">
+              <p class="text-1xl font-bold bg-gray-300 rounded w-fit p-1">
+                GET
+              </p>
+              <input
+                class="bg-white border-gray-500 border-2 rounded text-center p-1 w-96"
+                disabled
+                value="https://clear-cow-12.deno.dev/api/raw/{id}"
+              />
+            </div>
+            <p>Allows you to view the raw content.</p>
+            <p>
+              {"{id} equals id of the paste"}
+            </p>
+          </div>
+
+          <p class=" bg-gray-300 rounded w-fit p-1">
+            Pastes gets expired after 30 days!
           </p>
-          <a href="/" class="underline">Go back home</a>
         </div>
-      </div>
+        <div>
+        </div>
+      </section>
     </>
   );
 }
