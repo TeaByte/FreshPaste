@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
-import { set } from "../../utils/db.ts";
+import { makePaste } from "../../utils/db.ts";
 
 export const handler: Handlers = {
   async POST(req) {
@@ -16,7 +16,7 @@ export const handler: Handlers = {
         },
       );
     }
-    const id = set(content, syntax);
+    const id = await makePaste(content, syntax);
     return new Response(JSON.stringify({ id }), {
       headers: {
         "content-type": "application/json",

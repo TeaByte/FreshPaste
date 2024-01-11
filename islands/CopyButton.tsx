@@ -1,4 +1,3 @@
-import type { Signal } from "@preact/signals";
 import { Button } from "../components/Button.tsx";
 
 interface CopyButton {

@@ -1,13 +1,13 @@
 import { asset } from "$fresh/runtime.ts";
 import { Head } from "$fresh/runtime.ts";
 import { type Handlers, PageProps } from "$fresh/server.ts";
-import { get } from "../utils/db.ts";
+import { getPaste } from "../utils/db.ts";
 import CopyButton from "../islands/CopyButton.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {
     const id = ctx.params.paste;
-    const paste = await get(id);
+    const paste = await getPaste(id);
     if (!paste) {
       return ctx.renderNotFound();
     }

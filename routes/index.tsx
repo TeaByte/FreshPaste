@@ -1,8 +1,8 @@
 import { Handlers } from "$fresh/server.ts";
-import { set } from "../utils/db.ts";
+import { makePaste } from "../utils/db.ts";
 
 export const handler: Handlers = {
-  async GET(req, ctx) {
+  async GET(_, ctx) {
     return await ctx.render();
   },
 
@@ -10,13 +10,13 @@ export const handler: Handlers = {
     const form = await req.formData();
     const content = form.get("content")?.toString();
     const syntax = form.get("syntax")?.toString();
+
     if (!content || !syntax) {
       return new Response(null, {
         status: 404,
       });
     }
-
-    const id = set(content, syntax);
+    const id = await makePaste(content, syntax);
     const headers = new Headers();
     headers.set("location", `/${id}`);
     return new Response(null, {
@@ -34,16 +34,16 @@ export default function Subscribe() {
         method="post"
       >
         <textarea
+          rows={17}
           minLength={5}
           maxlength={5000}
-          required
-          class="px-2 w-full py-1 border-gray-500 bg-white border-2 rounded"
-          rows={17}
           type="text"
           name="content"
           placeholder="Paste your content here"
-          value=""
-        />
+          class="textarea textarea-bordered w-full"
+        >
+        </textarea>
+
         <div class="flex gap-2">
           <button
             type="submit"
