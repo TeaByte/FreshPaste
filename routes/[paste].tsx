@@ -26,20 +26,22 @@ export default function Greet(props: PageProps) {
         </link>
       </Head>
 
-      <section>
-        <div class="flex justify-between items-center">
-          <p>Syntax: {props.data.paste.syntax.toUpperCase()}</p>
-          <div class={"flex gap-1 items-center justify-center"}>
+      <section class="h-full flex flex-col items-center justify-center mx-8 py-8">
+        <div class="flex justify-between items-center w-full">
+          <div class="badge bg-base-300">
+            {props.data.paste.syntax.toUpperCase()}
+          </div>
+          <div class="flex gap-1 items-center justify-center">
             <CopyButton content={props.data.paste.content} />
             <a
               href={`/api/raw/${props.data.id}`}
-              class="px-2 py-1 border-gray-500 border-2 rounded bg-white hover:bg-gray-200 transition-colors"
+              class="btn btn-active btn-ghost"
             >
               Raw
             </a>
           </div>
         </div>
-        <pre class="rounded h-96"><code class={`language-${props.data.paste.syntax} match-braces line-numbers`}>{props.data.paste.content}</code></pre>
+        <pre class="rounded grow w-full"><code class={`language-${props.data.paste.syntax} match-braces line-numbers`}>{props.data.paste.content}</code></pre>
       </section>
     </>
   );

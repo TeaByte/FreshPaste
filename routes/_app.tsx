@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar.tsx";
 
 export default function App({ Component }: PageProps) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,11 +18,7 @@ export default function App({ Component }: PageProps) {
           name="keywords"
           content="text sharing, collaboration, code snippets, notes, online platform, Fresh Paste"
         />
-        <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="revisit-after" content="10 days" />
-        <meta name="author" content="TeaBytr" />
+        <meta name="author" content="TeaByte" />
 
         <link rel="stylesheet" href="/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,13 +29,13 @@ export default function App({ Component }: PageProps) {
         />
       </head>
       <body>
-        <NavBar />
-        <main class="flex flex-col items-center justify-center gap-2 px-6 md:px-20 w-full">
-          <div class="w-full">
+        <div class="h-screen flex flex-col">
+          <NavBar />
+          <main class="grow">
             <Component />
-          </div>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

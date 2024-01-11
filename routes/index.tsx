@@ -1,6 +1,8 @@
 import { Handlers } from "$fresh/server.ts";
 import { makePaste } from "../utils/db.ts";
 
+import SelectLang from "../components/SelectLang.tsx";
+
 export const handler: Handlers = {
   async GET(_, ctx) {
     return await ctx.render();
@@ -28,81 +30,25 @@ export const handler: Handlers = {
 
 export default function Subscribe() {
   return (
-    <section>
+    <section class="h-full flex flex-col items-center justify-center mx-8">
       <form
-        class="flex flex-col w-full items-center justify-center gap-2"
+        class="grow flex flex-col w-full items-center justify-center gap-2 py-8"
         method="post"
       >
         <textarea
-          rows={17}
           minLength={5}
           maxlength={5000}
           type="text"
           name="content"
           placeholder="Paste your content here"
-          class="textarea textarea-bordered w-full"
+          class="textarea textarea-bordered bg-base-300 w-full h-full"
         >
         </textarea>
-
         <div class="flex gap-2">
-          <button
-            type="submit"
-            class="px-2 py-1 w-32 border-gray-500 border-2 rounded bg-white hover:bg-gray-200 transition-colors"
-          >
+          <button type="submit" class="btn btn-active btn-ghost w-52">
             Share
           </button>
-          <select
-            name="syntax"
-            class="bg-white border-gray-500 border-2 rounded w-40"
-          >
-            <option value="plain" default>TEXT</option>
-            {[
-              "html",
-              "css",
-              "javascript",
-              "bash",
-              "basic",
-              "brainfuck",
-              "c",
-              "csharp",
-              "cpp",
-              "clojure",
-              "coffeescript",
-              "dart",
-              "elixir",
-              "erlang",
-              "fsharp",
-              "factor",
-              "go",
-              "graphql",
-              "haskell",
-              "java",
-              "julia",
-              "kotlin",
-              "lisp",
-              "livescript",
-              "lua",
-              "markdown",
-              "matlab",
-              "ocaml",
-              "php",
-              "phpdoc",
-              "python",
-              "qsharp",
-              "r",
-              "regex",
-              "ruby",
-              "rust",
-              "sql",
-              "swift",
-              "typescript",
-              "webassembly",
-              "yaml",
-              "zig",
-            ].map((syntax) => (
-              <option value={syntax}>{syntax.toUpperCase()}</option>
-            ))}
-          </select>
+          <SelectLang />
         </div>
       </form>
     </section>
