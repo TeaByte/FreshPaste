@@ -5,10 +5,6 @@
 import * as $_paste_ from "./routes/[paste].tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $api from "./routes/api.tsx";
-import * as $api_paste_ from "./routes/api/[paste].ts";
-import * as $api_new from "./routes/api/new.ts";
-import * as $api_raw_paste_ from "./routes/api/raw/[paste].ts";
 import * as $index from "./routes/index.tsx";
 import * as $CopyButton from "./islands/CopyButton.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -18,10 +14,6 @@ const manifest = {
     "./routes/[paste].tsx": $_paste_,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/api.tsx": $api,
-    "./routes/api/[paste].ts": $api_paste_,
-    "./routes/api/new.ts": $api_new,
-    "./routes/api/raw/[paste].ts": $api_raw_paste_,
     "./routes/index.tsx": $index,
   },
   islands: {

@@ -19,7 +19,6 @@ export default function App({ Component }: PageProps) {
           content="text sharing, collaboration, code snippets, notes, online platform, Fresh Paste"
         />
         <meta name="author" content="TeaByte" />
-
         <link rel="stylesheet" href="/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

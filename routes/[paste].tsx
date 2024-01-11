@@ -2,6 +2,7 @@ import { asset } from "$fresh/runtime.ts";
 import { Head } from "$fresh/runtime.ts";
 import { type Handlers, PageProps } from "$fresh/server.ts";
 import { getPaste } from "../utils/db.ts";
+
 import CopyButton from "../islands/CopyButton.tsx";
 
 export const handler: Handlers = {
@@ -25,7 +26,6 @@ export default function Greet(props: PageProps) {
         >
         </link>
       </Head>
-
       <section class="h-full flex flex-col items-center justify-center mx-8 py-8">
         <div class="flex justify-between items-center w-full">
           <div class="badge bg-base-300">
