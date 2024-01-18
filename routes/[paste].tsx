@@ -31,15 +31,7 @@ export default function Greet(props: PageProps) {
           <div class="badge bg-base-300">
             {props.data.paste.syntax.toUpperCase()}
           </div>
-          <div class="flex gap-1 items-center justify-center">
-            <CopyButton content={props.data.paste.content} />
-            <a
-              href={`/api/raw/${props.data.id}`}
-              class="btn btn-active btn-ghost"
-            >
-              Raw
-            </a>
-          </div>
+          <CopyButton content={props.data.paste.content} />
         </div>
         <pre class="rounded grow w-full"><code class={`language-${props.data.paste.syntax} match-braces line-numbers`}>{props.data.paste.content}</code></pre>
       </section>
